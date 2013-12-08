@@ -1,0 +1,41 @@
+
+<div class="navbar-header">
+  <!-- <a class="navbar-brand" onclick="refresh()">Map Editor</a> -->
+  <div class="navbar-brand map-title">
+    <input type="text" class="form-control" id="map-title" placeholder="Map Title">
+  </div>
+  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-editor">
+    <span class="sr-only">Toggle navigation</span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+  </button>
+</div>
+
+<nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation" id="navbar-collapse-editor">
+  
+  <ul class="nav navbar-nav navbar-right">
+    <li class="editor-nav">      
+      <button class="btn btn-success btn-sm form-control" onclick="refresh()">Refresh</button>
+    </li>        
+    <li class="editor-nav">
+      <button class="btn btn-success btn-sm form-control" onclick="back()">Back</button>
+    </li>        
+    <li class="editor-nav">
+      <button class="btn btn-success btn-sm form-control" onclick="save()">Save</button>
+    </li>        
+    <li class="editor-nav">
+      <button class="btn btn-success btn-sm form-control" onclick="saveCopy()">Save Copy</button>
+    </li>        
+    <li class="editor-nav">
+      <button class="btn btn-success btn-sm form-control" onclick="map.undo()">Undo</button>
+    </li>        
+    <li class="editor-nav">
+      <button class="btn btn-success btn-sm form-control" onclick="map.redo()">Redo</button>
+    </li>        
+    <li class="editor-nav">
+      <button class="btn btn-success btn-sm form-control" onclick="logout()">Logout</button>
+    </li>
+  </ul>
+</nav>
+

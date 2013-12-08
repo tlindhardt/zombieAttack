@@ -1,0 +1,210 @@
+
+body {
+  min-width: 1080px;
+}
+
+#map-title {
+  position: fixed;
+  z-index: 10001;
+  top: 5px;
+  left: 5px;
+  width: 300px;
+}
+
+.page-controls {
+  position: fixed;
+  z-index: 10001;
+  right: 5px;
+  top: 5px;
+}
+
+#save-time {
+  position: absolute;
+  left: 5px;
+  top: 45px;
+  background-color: rgba(255,255,255,.4);
+  color: black;
+  border-radius: 5px;
+  padding: 3px;
+}
+
+.left-side {
+  position: fixed;
+  left: 0px;
+  top: 80px;
+  padding-left: 20px;
+  background-color: rgba(255,255,255,.3);
+  border-top: 2px solid #dff0d8;
+}
+
+.slide {
+  position: fixed;
+  height: 400px;
+  width: 22px;
+  left: 420px;
+  top: 80px;
+  border: 2px solid #dff0d8;
+  background-color: #5cb85c;
+}
+
+#map {
+  position: fixed;
+  left: 440px;
+  top: 80px;
+  border: 2px solid #dff0d8;
+  background-color: rgba(255,255,255,.3);
+}
+
+
+/*********** Left Col Inner Stuff *************/
+
+.left-col {
+  width: 400px;
+}
+
+.checks {
+  display: inline-block;
+  margin-left: 30px;
+}
+
+.player {
+  display: inline-block;
+  margin-left: 30px;
+}
+
+.clicks-table {
+  display: inline-block;
+}
+
+.click-labels th {
+  text-align: center;
+}
+
+#left-click, #right-click {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.fill {
+  text-align: center;
+}
+
+.options {
+  width: 49%;
+  margin-top: 5px;
+}
+
+.reset {
+  width: 99%;
+}
+
+
+/***** help dialog ********/
+
+.help {
+  border-radius: 5px;
+  position: fixed;
+  left: 400px;
+  top: -400px;
+  background-color: rgba(0,0,0,.7);
+  color: white;
+  z-index: 10001;
+  padding: 10px;
+}
+
+.help th, .help p {
+  text-align: center;
+}
+
+.help td {
+  padding-left: 10px;
+  padding-right: 5px;
+  border: 1px solid whitesmoke;
+}
+
+/*
+.tab-content {
+	display: inline-block;
+	margin-top: -3px;
+	border: none;
+	padding: 5px;
+}
+
+.nav-tabs {
+	display: inline-block;
+	border-bottom: none;
+}
+
+.left-side {
+  position: fixed;
+  left: 20px;
+  top: 80px;
+}
+
+
+
+.map-info {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.title-form {
+	padding-right: 30px;
+}
+
+.title-div {
+	display: inline-block;
+	margin-right: 20px;
+	width: 350px;
+}
+
+.map-div {
+  display: inline-block;
+  margin-top: 30px;
+  float: right;
+
+  position: fixed;
+  left: 420px;
+}
+
+.tab-pane div {
+	margin-top: 5px;
+}
+
+
+
+
+
+
+
+
+
+.clear-layer {
+	text-align: center;
+	width: 100%;
+}
+
+.checks {
+	display: inline-block;
+	margin-left: 30px;
+}
+
+.player {
+	display: inline-block;
+	margin-left: 30px;
+}
+
+.editor-button {
+  padding-left: 5px;
+  padding-right: 0px;
+}
+
+.map-title {
+  padding: 8px 5%;
+  width: 280px;
+}
+
+.editor-nav {
+  margin: 8px 3px;
+}
+*/

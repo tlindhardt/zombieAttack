@@ -1,0 +1,149 @@
+<div id="userSettings">
+
+	<div class="col-sm-1"></div>
+	<div class="col-sm-3" style="top:60px; opacity:.9">
+		<div class="panel panel-success" id="adminSidePanel">
+			<div class="panel-heading" style="text-align:center; font-size:16px;">All Users</div>
+			<ul class="list-group" id="userList" style="max-height:400px; overflow:auto">
+			</ul>
+		</div>
+	</div>
+	<div class="col-sm-1" style="top:36px;">
+			<table id="load-table" style="width:700px; height:500px; background: url(images/tv.png),url(images/static.gif);
+; background-size: 700px, 500px; background-repeat:no-repeat; background-position-y: 0px,50px;
+background-position-x: 0px,50px; ">
+			<tr>
+					<td width="200px"><div  style="margin-left: 90px; margin-bottom:130px; width:175px;" id = "avatar"><img id = 'gravatar'></image></div></td>
+				<td>
+				
+
+
+						<table id='editTable' style='margin-top:-150px; width:420px; '>
+							<tr>
+								<td >
+									<div class = 'col-lg-7'>
+										<input type="text" disabled="true" class="form-control" placeholder="Name" name="name" id="tdemail">
+									</div>
+								</td>
+							</tr>
+							
+							<tr>
+							<td>
+								 <div class="col-lg-7">
+							    <div class="input-group">
+							      <input type="text"  id='inname' placeholder='Name' class="form-control">
+							      <span class="input-group-btn">
+	        					<button class="btn btn-default" onclick="edituser()" type="button">Save</button>
+	      						</span>
+							    </div><!-- /input-group -->
+							  </div><!-- /.col-lg-7 -->
+							  </td>
+							<tr>
+						
+						<tr>
+							<td>
+								 <div class="col-lg-7">
+							      
+							      <input type="password" id = 'inpass' placeholder = "Password" class="form-control">
+							       
+							    </div><!-- /input-group -->
+							  </div><!-- /.col-lg-7 -->
+							  </td>
+							<tr>
+
+							<tr>
+							<td>
+								 <div class="col-lg-7">
+							    <div class="input-group">
+							      <input type="password" id='inpass2' placeholder="Verify Password" class="form-control">
+							      <span class="input-group-btn">
+	        					<button class="btn btn-default" onclick="edituser()" type="button">Save</button>
+	      						</span>
+							       
+							    </div><!-- /input-group -->
+							  </div><!-- /.col-lg-7 -->
+							  </td>
+							<tr>
+
+					</table>
+				
+
+					<table id='permTable' style='margin-top:-150px; width:420px; '>
+							<tr>
+								<td >
+									<div class = 'col-lg-7'>
+										<input type="text" disabled="true" class="form-control" placeholder="Name" name="name" id="tdemail2">
+									</div>
+								</td>
+							</tr>
+							
+							<tr>
+							<td>
+								 <div class="col-lg-7">
+							    <div class="input-group">
+							      <span class="input-group-addon">
+							        <input type="checkbox" id = 'cha'>
+							      </span>
+							      <input type="text" disabled="true" value="Administrator" class="form-control">
+							      
+							    </div><!-- /input-group -->
+							  </div><!-- /.col-lg-7 -->
+							  </td>
+							<tr>
+						
+						<tr>
+							<td>
+								 <div class="col-lg-7">
+							    <div class="input-group">
+							      <span class="input-group-addon">
+							        <input type="checkbox" id = 'chd'>
+							      </span>
+							      <input type="text" disabled="true" value="Designer" class="form-control">
+							       
+							    </div><!-- /input-group -->
+							  </div><!-- /.col-lg-7 -->
+							  </td>
+							<tr>
+
+							<tr>
+							<td>
+								 <div class="col-lg-7">
+							    <div class="input-group">
+							      <span class="input-group-addon">
+							        <input type="checkbox" id = 'chp'>
+							      </span>
+							      <input type="text" disabled="true" value="Player" class="form-control">
+							       
+							    </div><!-- /input-group -->
+							  </div><!-- /.col-lg-7 -->
+							  </td>
+							<tr>
+
+					</table>
+				</td>
+				<td>
+					
+				<table id="permission-buttons" style="position: absolute;left: 578px; bottom:310px;">
+				<tr>
+					<td id="upgradeUserData"><button onclick="upgradeuser()" class='btn btn-danger' style="position: relative;left: 12px;">Save</button><br><br></td>
+				</tr>
+				<tr>
+					<td id="deleteUserData"><button onclick="deleteUser()" class='btn btn-danger' style="position: relative;left: 7px;">Delete</button></td>
+				</tr>
+				<tr>
+					<td id="approveUserData"><button onclick="approveUser()" class='btn btn-danger'>Approve</button><br><br></td>
+				</tr>
+				<tr>
+					<td id="denyUserData"><button onclick="denyUser()" class='btn btn-danger' style="position: relative;left: 11px;">Deny</button></td>
+				</tr>
+				</table>
+
+							
+				</td>
+			</tr>
+			</table>
+	</div>
+
+	<script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+	<script src="javascripts/userInfo.js"></script>
+</div>

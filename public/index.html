@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <title>ZOMBIE ATTACK!!!</title>
+    <link href="bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+    <link href="bootstrap/examples/jumbotron/jumbotron.css" rel="stylesheet">
+    <link href="jqueryfileupload/css/jquery.fileupload.css" rel="stylesheet">
+    
+
+    <link href="stylesheets/style.css" rel="stylesheet">
+    <script>var pageName ;</script>
+  </head>
+  <body style="background:url('images/background.jpg'); background-size: cover;">
+    <div class="navbar navbar-inverse navbar-fixed-top" style="background: none; border:none;">
+      <div class="container" id="main-header">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class="navbar-collapse collapse">
+          <div id="user-info">
+          <form id="login-form" class="navbar-form navbar-right">
+              <div class="form-group">
+                <input type="text" id = "login-email" placeholder="Email" name = "email" class="form-control">
+              </div>
+              <div class="form-group">
+                <input type="password" id = "login-password" placeholder="Password" name = "password" class="form-control">
+              </div>
+              <button type="button" id="form-login-button" class="btn btn-success">Sign in</button>
+          </form>
+          </div>
+        </div>
+      </div>
+      <div class="container" id="editor-header" style="display:none"></div>
+    </div>
+    <div id="load-stuff-here" class="container">
+    </div>
+    <script src="bootstrap/assets/js/jquery.js"></script>
+    <script src="bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bootstrap/assets/js/holder.js"></script>
+    <script src="http://www.myersdaily.org/joseph/javascript/md5.js"></script>
+    <script type="text/javascript">
+    $(function ()
+     {
+          $.get('/currentuser',function(data)
+          {
+             $('#login-form').html(' <div class="form-group"><input type="text" id = "login-email" placeholder="Email" name = "email" class="form-control"></div><div class="form-group"><input type="password" id = "login-password" placeholder="Password" name = "password" class="form-control"></div><button type="button" id="form-login-button" class="btn btn-success">Sign in</button>');
+            if(data.result=='failure')
+            {
+              console.log('loading startup');
+              $('#load-stuff-here').load('startup.html');
+            }
+            else
+            {
+              console.log('loading other');
+
+              if(data.page == 'main' )
+              {
+                $('#load-stuff-here').load('main.html');
+                loadMainPage();
+              }
+              else if(data.page == 'editor')
+              {
+                $('#load-stuff-here').load('mapEditor.html');
+              }
+              else if(data.page== 'userInfo')
+              {
+                loadUserInfo();
+              }
+              else
+              {
+                console.log('interestingthingsforreasons');
+              }
+
+            }
+          });
+        //});
+    });
+
+    $('body').keypress(function(e){
+    if(e.which === 92){
+        var x = document.getElementById('audio');
+        if(x.muted == true)
+          x.muted = false;
+        else
+          x.muted = true;
+      }
+    });
+    </script>
+    <script src="javascripts/userInfo.js"></script>
+    <script src="javascripts/main.js"></script>
+    <script src="javascripts/spatter.js"></script>
+    <script src="jqueryfileupload/js/vendor/jquery.ui.widget.js"></script>
+    <script src="jqueryfileupload/js/jquery.iframe-transport.js"></script>
+    <script src="jqueryfileupload/js/jquery.fileupload.js"></script>
+    <audio autoplay id="audio" loop>
+      <source src="default/sound.mp3" type="audio/mpeg">
+      <embed height="50" width="100" src="default/sound.mp3">
+    </audio>
+  </body>
+</html>

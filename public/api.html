@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <title>ZOMBIE ATTACK API!!!</title>
+    <link href="bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+    <link href="bootstrap/examples/jumbotron/jumbotron.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <script>var pageName = "home";</script>
+  </head>
+  <body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" onClick="">Zombie Attack API</a>
+        </div>
+        <div class="navbar-collapse collapse">
+        </div>
+      </div>
+    </div>
+    <div id="load-stuff-here" style="max-width:600px; margin:0 auto;">
+    <div class="panel panel-info" id="adminSidePanel">
+      <div class="panel-heading" style="text-align:center; font-size:16px;">API Calls</div>
+      <ul class="list-group" id="userList" style="max-height:500px; overflow:auto">
+        <li class='list-group-item'>
+        <table>
+          <tr>
+            <th style="width:150px;">Method</th>
+            <th style="width:150px;">URL</th>
+            <th style="width:150px;">Req</th>
+            <th style="width:150px;">Res</th>
+          </tr>
+        </table>
+        </li>
+        <li class='list-group-item'>
+        <table>
+          <tr>
+            <td style="width:150px;">Post</td>
+            <td style="width:150px;">/login</td>
+            <td style="width:150px;">{email,<br>password}</td>
+            <td style="width:150px;">{email,<br>success}</td>
+          </tr>
+        </table>
+        </li>
+        <li class='list-group-item'>
+        <table>
+          <tr>
+            <td style="width:150px;">Post</td>
+            <td style="width:150px;">/newuserrequest</td>
+            <td style="width:150px;">{password,<br>email,<br>name}</td>
+            <td style="width:150px;">{success}</td>
+          </tr>
+        </table>
+        </li>
+        <li class='list-group-item'>
+        <table>
+          <tr>
+            <td style="width:150px;">Post</td>
+            <td style="width:150px;">/logout</td>
+            <td style="width:150px;">{}</td>
+            <td style="width:150px;">{success}</td>
+          </tr>
+        </table>
+        </li>
+        <li class='list-group-item'>
+        <table>
+          <tr>
+            <td style="width:150px;">Get</td>
+            <td style="width:150px;">/mapsrequest</td>
+            <td style="width:150px;">{}</td>
+            <td style="width:150px;">{maps[]}</td>
+          </tr>
+        </table>
+        </li>
+        <li class='list-group-item'>
+        <table>
+          <tr>
+            <td style="width:150px;">Post</td>
+            <td style="width:150px;">/playmap</td>
+            <td style="width:150px;">{mapid}</td>
+            <td style="width:150px;">{url}</td>
+          </tr>
+        </table>
+        </li>
+        <li class='list-group-item'>
+        <table>
+          <tr>
+            <td style="width:150px;">Post</td>
+            <td style="width:150px;">/map</td>
+            <td style="width:150px;">{id,<br>map}</td>
+            <td style="width:150px;">{success}</td>
+          </tr>
+        </table>
+        </li>
+        <li class='list-group-item'>
+        <table>
+          <tr>
+            <td style="width:150px;">Get</td>
+            <td style="width:150px;">/map</td>
+            <td style="width:150px;">{id,<br>map}</td>
+            <td style="width:150px;">{map}</td>
+          </tr>
+        </table>
+        </li>
+        <li class='list-group-item'>
+        <table>
+          <tr>
+            <td style="width:150px;">Post</td>
+            <td style="width:150px;">/createmap</td>
+            <td style="width:150px;">{name}</td>
+            <td style="width:150px;">{map,<br>success}</td>
+          </tr>
+        </table>
+        </li>
+        <li class='list-group-item'>
+        <table>
+          <tr>
+            <td style="width:150px;">Post</td>
+            <td style="width:150px;">/updatemap</td>
+            <td style="width:150px;">{id,<br>map}</td>
+            <td style="width:150px;">{success}</td>
+          </tr>
+        </table>
+        </li>
+        <li class='list-group-item'>
+        <table>
+          <tr>
+            <td style="width:150px;">Delete</td>
+            <td style="width:150px;">/deleteMap</td>
+            <td style="width:150px;">{id}</td>
+            <td style="width:150px;">{success}</td>
+          </tr>
+        </table>
+        </li>
+        <li class='list-group-item'>
+        <table>
+          <tr>
+            <td style="width:150px;">Post</td>
+            <td style="width:150px;">/approve</td>
+            <td style="width:150px;">{email}</td>
+            <td style="width:150px;">{success}</td>
+          </tr>
+        </table>
+        </li>
+        <li class='list-group-item'>
+        <table>
+          <tr>
+            <td style="width:150px;">Post</td>
+            <td style="width:150px;">/deny</td>
+            <td style="width:150px;">{email}</td>
+            <td style="width:150px;">{success}</td>
+          </tr>
+        </table>
+        </li>
+        <li class='list-group-item'>
+        <table>
+          <tr>
+            <td style="width:150px;">Get</td>
+            <td style="width:150px;">/userrequests</td>
+            <td style="width:150px;">{}</td>
+            <td style="width:150px;">{users[]}</td>
+          </tr>
+        </table>
+        </li>
+        <li class='list-group-item'>
+        <table>
+          <tr>
+            <td style="width:150px;">Get</td>
+            <td style="width:150px;">/users</td>
+            <td style="width:150px;">{}</td>
+            <td style="width:150px;">{users[]}</td>
+          </tr>
+        </table>
+        </li>
+        <li class='list-group-item'>
+        <table>
+          <tr>
+            <td style="width:150px;">Get</td>
+            <td style="width:150px;">/currentuser</td>
+            <td style="width:150px;">{}</td>
+            <td style="width:150px;">{user}</td>
+          </tr>
+        </table>
+        </li>
+        <li class='list-group-item'>
+        <table>
+          <tr>
+            <td style="width:150px;">Post</td>
+            <td style="width:150px;">/editpassword</td>
+            <td style="width:150px;">{password}</td>
+            <td style="width:150px;">{success}</td>
+          </tr>
+        </table>
+        </li>
+        <li class='list-group-item'>
+        <table>
+          <tr>
+            <td style="width:150px;">Post</td>
+            <td style="width:150px;">/editname</td>
+            <td style="width:150px;">{email,<br>name}</td>
+            <td style="width:150px;">{success}</td>
+          </tr>
+        </table>
+        </li>
+        <li class='list-group-item'>
+        <table>
+          <tr>
+            <td style="width:150px;">Post</td>
+            <td style="width:150px;">/upgrade</td>
+            <td style="width:150px;">{id,<br>admin,<br>designer,<br>player}</td>
+            <td style="width:150px;">{success}</td>
+          </tr>
+        </table>
+        </li>
+        <li class='list-group-item'>
+        <table>
+          <tr>
+            <td style="width:150px;">Post</td>
+            <td style="width:150px;">/deleteuser</td>
+            <td style="width:150px;">{email}</td>
+            <td style="width:150px;">{success}</td>
+          </tr>
+        </table>
+        </li>
+      </ul>
+    </div>
+    </div>
+    <script src="bootstrap/assets/js/jquery.js"></script>
+    <script src="bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bootstrap/assets/js/holder.js"></script>
+  </body>
+</html>

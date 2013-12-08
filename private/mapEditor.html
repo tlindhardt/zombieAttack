@@ -1,0 +1,147 @@
+<div id="map-editor">
+  <link href="stylesheets/mapEditor.css" rel="stylesheet">
+  <link href="stylesheets/tiles.css" rel="stylesheet">
+
+  <input type="text" class="form-control" id="map-title" placeholder="Map Title">
+
+  <div class="page-controls">
+    <button class="btn btn-success" onclick="refresh()">Refresh</button>
+    <button class="btn btn-success" onclick="back()">Back</button>
+    <button class="btn btn-success" onclick="save()">Save</button>
+    <button class="btn btn-success" onclick="saveCopy()">Save Copy</button>
+    <button class="btn btn-success" onclick="map.undo()">Undo</button>
+    <button class="btn btn-success" onclick="map.redo()">Redo</button>
+    <button class="btn btn-success" onclick="logout()">Logout</button>
+  </div>
+
+  <label id="save-time"></label>
+
+  <div class="left-side">
+  	<div class="left-col">
+  		<table class="clicks-table">
+  			<thead>
+          <tr class="click-labels">
+            <th>Left</th>
+            <th>Right</th>
+          </tr>   
+        </thead>
+        <tbody>
+          <tr>
+            <td class="clicks">
+              <canvas id="left-click" class="left-click" width="40" height="40"></canvas>
+            </td>
+            <td class="clicks">
+              <canvas id="right-click" class="right-click" width="40" height="40"></canvas>
+            </td>          
+          </tr>
+          <tr>
+            <td class="fill">
+              <button class="btn btn-xs" onclick="map.fillLeft()">Fill Left</button>
+            </td>
+            <td class="fill">
+              <button class="btn btn-xs" onclick="map.fillRight()">Fill Right</button>
+            </td>
+        </tbody>
+  		</table>
+
+      <div class="checks">
+        <div class="checkbox">
+          <label><input type="checkbox" checked id="CHK-bottom"/>Bottom</label>
+        </div> 
+        <div class="checkbox">
+          <label><input type="checkbox" checked id="CHK-middle"/>Middle</label>
+        </div>
+        <div class="checkbox">
+          <label><input type="checkbox" checked id="CHK-upper"/>Upper</label>
+        </div>
+        <div class="checkbox">
+          <label><input type="checkbox" checked id="CHK-grid"/>Grid</label>
+        </div>
+     </div>
+
+     <div class="player">
+      <div class="checkbox">
+        <label><input type="checkbox" checked id="CHK-events"/>Events</label>
+      </div>
+      <div class="checkbox">
+        <label><input type="checkbox" checked id="CHK-player"/>Player</label>
+      </div>
+      <img src="/images/player.png" 
+           id="player" 
+           draggable="true"
+           ondragStart="dragStart(event)"
+           >
+     </div>
+
+  		<ul class="nav nav-tabs">
+  			<li class="active"><a onclick="setLayer('bottom')" href="#bottom" data-toggle="tab">Bottom</a></li>
+  			<li><a onclick="setLayer('middle')" href="#middle" data-toggle="tab">Middle</a></li>
+        <li><a onclick="setLayer('upper')" href="#upper" data-toggle="tab">Upper</a></li>
+  			<li><a onclick="setLayer('events')" href="#events" data-toggle="tab">Events</a></li>
+  			<li><a href="#options" data-toggle="tab">Options</a></li>
+  		</ul>
+
+  		<div class="tab-content">
+  			<div class="tab-pane active" id="bottom">Loading....</div>
+  			<div class="tab-pane" id="middle">Loading....</div>
+        <div class="tab-pane" id="upper">Loading....</div>
+  			<div class="tab-pane" id="events">Loading....</div>
+  			<div class="tab-pane" id="options">
+  				<div class="zoom-options">
+  					<button class="btn btn-success options" onclick="map.zoomIn()">Zoom In</button> 
+  					<button class="btn btn-success options" onclick="map.zoomOut()">Zoom Out</button>
+          </div>                        
+          <div>  
+  					<button class="btn btn-success options reset" onclick="map.setCanvaTileSize(40)">Reset Zoom</button>
+  				</div>                        
+  				<div>
+  					<button class="btn btn-success options" onclick="map.moveUp()">Move Up</button>
+  					<button class="btn btn-success options" onclick="map.moveDown()">Move Down</button>
+  				</div>
+  				<div>
+  					<button class="btn btn-success options" onclick="map.moveLeft()">Move Left</button>
+  					<button class="btn btn-success options" onclick="map.moveRight()">Move Right</button>
+  				</div>  
+  				<div>
+  					<button class="btn btn-success options" onclick="map.increaseSelectSize()">Increase Select Size</button>
+  					<button class="btn btn-success options" onclick="map.decreaseSelectSize()">Decrease Select Size</button>
+  				</div>
+  				<div>
+  					<button class="btn btn-success options" onclick="map.increaseMapWidth()">Increase Map Width</button>
+  					<button class="btn btn-success options" onclick="map.increaseMapHeight()">Increase Map Height</button>
+  				</div>
+  				<div>
+  					<button class="btn btn-success options" onclick="map.decreaseMapWidth()">Decrease Map Width</button>
+  					<button class="btn btn-success options" onclick="map.decreaseMapHeight()">Decrease Map Height</button>
+  				</div>
+  			</div>
+  		</div>
+
+  	</div>
+  </div>
+	
+  <div class="slide glyphicon glyphicon-chevron-left" onclick="slide()"></div>
+
+	<!-- ******************** Required ******************** -->
+	<canvas 
+      id="map" 
+      ondrop="map.drop(event)"
+      ondragover="map.dragOver(event)"></canvas>
+	<!-- ******************** /Required ******************** -->
+
+		
+
+	
+    <!--Alan's JavaScript -->
+    <!-- ******************** Required ******************** --> 
+    <!-- ================================================== --> 
+    <script src="javascripts/mapEditor/Map.js"></script>
+
+    <script src="javascripts/mapEditor/config.js"></script>
+    <script src="javascripts/mapEditor/autoSave.js"></script>
+    <script src="javascripts/mapEditor/mapEditor.js"></script>
+    <script src="javascripts/mapEditor/tiles.js"></script>
+    <script src="javascripts/mapEditor/events.js"></script>
+    <script src="javascripts/mapEditor/init.js"></script>
+    <!-- ******************** /Required ******************** -->
+</div>

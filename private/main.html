@@ -1,0 +1,57 @@
+	<div>
+		<div class="col-sm-1"></div>
+		<div class="col-sm-3" style="top:60px; opacity:.9">
+			<div class="panel panel-success">
+				<div class="panel-heading" style="text-align:center; font-size:16px;">Maps</div>
+				<ul class="list-group" id="mainList" style="max-height:400px; overflow:auto">
+				</ul>
+			</div>
+		</div>
+		<div class="col-sm-1" style="top:36px;">
+			<table id="load-table" style="width:700px; height:600px;">
+				<tr style="width:472px; height:470px; background: url('images/tv.png'); background-size:700px 500px"><td colspan="3" ><canvas id="canvas" style="position:relative;left:60px;z-index:-1; background: url('images/static.gif'); border:solid;" height="330px" width="450px"></canvas></td></tr>
+			</table>
+		</div>
+		<div id="make-map-modal" class="modal fade">
+		  <div class="modal-dialog">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+		        <h4 class="modal-title">Design New Map</h4>
+		      </div>
+		      <form id = "new-map-request">     
+		      <div class="modal-body">
+		              <div class="input-group">
+		                  <input type="text" class="form-control" id = "new-map-name" placeholder="Map Name">
+    					  <label>
+    					    <input type="checkbox" id = "new-random-map"> Generate Random Map
+    					  </label>
+		              </div>          
+		      </div>
+		      
+		      <div class="modal-footer">
+		        <button type="button" id = "new-request-close-btn" class="btn btn-default" data-dismiss="modal">Close</button>
+		        <button type="button" id = "make-map-submit-btn" class="btn btn-default" makeActiveclass="btn btn-primary">Submit Request</button>
+		      </div>
+		      
+		      </form>
+		    </div><!-- /.modal-content -->
+		  </div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->
+
+		<div id="play-map-modal" class="modal fade">
+		  <div class="modal-dialog" style="width:770px;">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" id = "new-request-close-btn" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+		        <h4 class="modal-title"></h4>
+		        <iframe class="play-area" src="" width="720" height="355">d
+				</iframe>
+		      </div>
+		    </div><!-- /.modal-content -->
+		  </div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->
+		<script src="javascripts/main.js"></script>
+		<script src="javascripts/userInfo.js"></script>
+		<script src="javascripts/drawMap.js"></script>
+	</div>
